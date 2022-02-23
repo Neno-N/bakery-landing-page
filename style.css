@@ -1,0 +1,258 @@
+/* ======= Variables ======= */
+:root {
+  --clr-background: #2e2e2e;
+  --clr-background-transparent: #2e2e2ec7;
+  --clr-black: #262423;
+  --clr-nude: #bea799;
+  --clr-brown-light: #836848;
+  --clr-brown-dark: #332d22;
+  --clr-brown: #664426;
+  --clr-green: #4c6c64;
+  --clr-grey: #747979;
+  --clr-green-dark: #344944;
+  --clr-white: #d8d4dc;
+
+  --regular-font: "Righteous", cursive;
+  --fancy-font: "Barriecito", cursive;
+
+  --transition-ease: all 0.3s ease;
+  --transition-linear: all 0.3s linear;
+}
+
+/* ======= Global Styles ======= */
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--clr-brown-dark);
+  color: var(--clr-white);
+  font-family: var(--regular-font);
+}
+
+button {
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn {
+  border: 2px solid var(--clr-white);
+  border-radius: 5px;
+  color: var(--clr-white);
+  padding: 0.5em;
+  margin-block: 0.5em;
+  font-size: 1em;
+  font-family: inherit;
+}
+
+.btn:hover {
+  background-color: var(--clr-white);
+  color: var(--clr-background);
+}
+
+ul {
+  list-style: none;
+}
+
+.logo {
+  background-color: var(--clr-white);
+  color: var(--clr-black);
+  font-family: var(--fancy-font);
+  width: fit-content;
+  padding-block: 1em;
+  padding-inline: 0.3em;
+  border-radius: 10px;
+}
+
+.section {
+  padding: 3em;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bx {
+  font-size: 2em;
+  color: inherit;
+}
+
+span {
+  font-family: var(--fancy-font);
+}
+p {
+  padding: 0.5em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ======= Navigation ======= */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.nav-header {
+  background-color: var(--clr-background);
+  padding: 0.3em;
+}
+.toggle-btn {
+  color: var(--clr-white);
+  transition: var(--transition-linear);
+}
+
+.toggle-btn:hover {
+  transform: scale(1.1);
+}
+
+.bx-dots-horizontal-rounded {
+  display: none;
+  transition: var(--transition-ease);
+}
+
+.bx-dots-vertical-rounded {
+  transition: var(--transition-ease);
+}
+
+.flat {
+  display: block;
+}
+
+.none {
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  padding-inline: 10%;
+  transform: translateX(500%);
+  transition: var(--transition-linear);
+  background-color: var(--clr-background);
+}
+
+.nav-links .logo {
+  display: none;
+}
+
+.show-links {
+  transform: translateX(100%);
+}
+
+.nav-link {
+  margin-block: 0.5em;
+  padding-block: 1em;
+  text-transform: uppercase;
+  transition: var(--transition-ease);
+  width: 100%;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  transform: scale(0.9);
+}
+
+@media (min-width: 700px) {
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--clr-background);
+  }
+
+  .nav-links {
+    flex-direction: row;
+    transform: none;
+  }
+
+  .nav-links .logo {
+    display: unset;
+    margin: 0.5em;
+    margin-inline: 1em;
+  }
+
+  .toggle-btn {
+    display: none;
+  }
+
+  .nav-header {
+    display: none;
+  }
+}
+/* ======= Navigation End ======= */
+
+/* ======= Header ======= */
+#home {
+  background: url(https://images.pexels.com/photos/4916562/pexels-photo-4916562.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500)
+    center/cover no-repeat;
+
+  height: 100vh;
+  background-color: var(--clr-background-transparent);
+  background-blend-mode: multiply;
+}
+
+.header {
+  text-align: center;
+}
+
+.header > * {
+  margin-top: 1.5em;
+}
+
+.title {
+  font-size: xxx-large;
+}
+/* ======= Header End ======= */
+
+/* ======= Gallery ======= */
+.gallery {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 25vw;
+  gap: 1vw;
+  overflow-x: hidden;
+}
+.gallery-container {
+  width: 100%;
+}
+.img-container img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+/* ======= Gallery End ======= */
